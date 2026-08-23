@@ -8,7 +8,7 @@ export default function StudentDetails() {
     const [error, setError] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/admin/students/${studentId}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/api/admin/students/${studentId}`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(async (response) => {

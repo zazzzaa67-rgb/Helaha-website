@@ -20,7 +20,7 @@ export default function StudentHome() {
 
             try {
                 const response = await fetch(
-                    'http://localhost:5000/api/students/dashboard',
+                    `${import.meta.env.VITE_API_URL}/api/students/dashboard`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

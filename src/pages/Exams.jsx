@@ -7,7 +7,7 @@ export default function Exams() {
 	const session = JSON.parse(localStorage.getItem('studentSession') || 'null')
 
 	useEffect(() => {
-		fetch('http://localhost:5000/api/students/exams', {
+		fetch(`${import.meta.env.VITE_API_URL}/api/students/exams`, {
 			headers: { Authorization: `Bearer ${session?.access_token || ''}` },
 		})
 			.then(async (response) => {

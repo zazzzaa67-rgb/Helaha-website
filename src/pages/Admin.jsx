@@ -3,7 +3,7 @@ import StudentRanking from '../components/StudentRanking.jsx'
 import DashboardCharts from '../components/DashboardCharts.jsx'
 import { NavLink } from 'react-router-dom'
 import logInImage from '../assets/images/logInImage.png'
-const API_URL = 'http://localhost:5000/api/admin'
+const API_URL = `${import.meta.env.VITE_API_URL}/api/admin`
 export default function Admin() {
     const [token, setToken] = useState(() => localStorage.getItem('adminToken'))
     const [credentials, setCredentials] = useState({ email: '', password: '' })

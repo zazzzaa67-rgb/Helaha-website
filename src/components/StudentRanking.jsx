@@ -14,7 +14,7 @@ export default function StudentRanking({
         if (!window.confirm(`هل أنت متأكد من ${action} للطالب ${student.full_name}؟`)) {
             return
         }
-        const response = await fetch('http://localhost:5000/api/admin/students/payment-status', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/students/payment-status`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export default function StudentRanking({
         }
         setPointsError('')
         const response = await fetch(
-            'http://localhost:5000/api/admin/students/points',
+            `${import.meta.env.VITE_API_URL}/api/admin/students/points`,
             {
                 method: 'POST',
                 headers: {
