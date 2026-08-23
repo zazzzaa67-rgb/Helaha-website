@@ -1,5 +1,5 @@
 import teacher from '../assets/images/teacher.png'
-
+import {NavLink} from 'react-router-dom'
 export default function Hero() {
     return (
         <section className="hero" dir="rtl">
@@ -20,8 +20,8 @@ export default function Hero() {
                         أفهم الرياضيات بطريقة أسهل، اختبر مستوياتك، تابع تطورك، وحقق في كل مسألة خطوة حديدة نحو التفوق.
                     </p>
                     <div className="heroButtons">
-                        <button className="ghostBtn btn">تعرّف على مستر وجدي</button>
-                        <button className="startLearning btn">ابدأ التعلم الآن</button>
+                        <a href='https://wa.me/201270707586' target='_blank' className="ghostBtn btn">تواصل معنا </a>
+                        <NavLink to='student' className="startLearning btn">ابدأ التعلم الآن</NavLink>
                     </div>
                     <div className="heroStats">
                         <div className="heroStat">
@@ -33,15 +33,12 @@ export default function Hero() {
                             <span className="heroStatLabel">نسبة التفوق</span>
                         </div>
                         <div className="heroStat">
-                            <span className="heroStatValue">+150</span>
+                            <span className="heroStatValue">+500</span>
                             <span className="heroStatLabel">طالب</span>
                         </div>
                     </div>
                 </div>
-                
-                    
-                        <img src={teacher} alt="مستر وجدي" className="heroTeacher" />
-                    
+                <img src={teacher} alt="مستر وجدي" className="heroTeacher" />
             </div>
         </section>
     );
