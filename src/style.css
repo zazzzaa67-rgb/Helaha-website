@@ -1,0 +1,1538 @@
+.correctQuestion {
+    border: 2px solid #16a34a;
+    background: #f0fdf4;
+}
+
+.correctAnswer {
+    color: #15803d;
+    font-weight: 700;
+}
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Tajawal", "Segoe UI", sans-serif;
+    background: #edf3ff;
+    color: #12213d;
+    direction: rtl;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+#root {
+    width: 100%;
+    padding : 0 ;
+    margin: 0; 
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(15, 31, 62, 0.08);
+    padding: 0.9rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.sigma {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(31, 90, 233, 0.18);
+}
+
+.name {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #11203d;
+}
+
+.thin {
+    display: block;
+    font-size: 1.3rem;
+    color: #60759a;
+    margin-top: 2px;
+    font-weight : 600;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 700;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(34, 97, 233, 0.2);
+}
+
+.mood {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #eef4ff;
+    color: #1f3f7a;
+    border: 1px solid #dce9ff;
+}
+
+.signUp {
+    background: #eef3ff;
+    color: #1b3058;
+    padding: 0.75rem 1.1rem;
+    
+}
+
+.startLearing,
+.startLearning ,
+.addStudent,
+.addTest{
+    background: linear-gradient(135deg, #2d6af0, #4f8cff);
+    color: white;
+    padding: 0.8rem 1.4rem;
+}
+.hero {
+    background: linear-gradient(90deg, #071d46 0%, #0d356d 42%, #123d7d 100%);
+    color: white;
+    padding: 3rem 5% 2rem;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroContainer {
+    width : 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+
+
+
+.heroTeacher {
+    width:95% ;
+    max-width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.15);
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.heroBadge {
+    position: absolute;
+    background: rgba(15, 31, 62, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.badge1 {
+    top: 20px;
+    right: -40px;
+}
+
+.badge2 {
+    bottom: 60px;
+    right: -50px;
+    font-size: 0.8rem;
+}
+
+.badge3 {
+    bottom: 30px;
+    left: -50px;
+}
+
+.badgeNumber {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 800;
+}
+
+.badgeIcon {
+    font-size: 0.9rem;
+}
+
+.badgeText {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+.heroRight {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heroTag {
+    display: inline-block;
+    background: rgba(65, 105, 225, 0.2);
+    border: 1px solid rgba(100, 150, 255, 0.4);
+    border-radius: 999px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #90bfff;
+    width: fit-content;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 2.2rem;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+    color: #4a9dff;
+    margin-bottom: 0.3rem;
+}
+
+.heroQuote {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #90bfff;
+    font-style: italic;
+}
+
+.heroDesc {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #bfd0f3;
+    max-width: 25rem;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.heroButtons .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.ghostBtn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+}
+
+/* .startLearning {
+    background: linear-gradient(135deg, #2a6be8, #4a8dff);
+    color: white;
+    border: none;
+} */
+
+.heroStats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.heroStat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.heroStatValue {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.heroStatLabel {
+    font-size: 1.25rem;
+    color: #90bfff;
+    opacity: 0.9;
+}
+
+.statsSection {
+    background: #f4f8ff;
+    padding: 3rem 5% 4rem;
+}
+
+.statsHeader {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    background: #e3edff;
+    color: #1d4ed8;
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.7rem;
+}
+
+.statsHeader h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #13264b;
+}
+
+.statsGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.statBox {
+    background: white;
+    border-radius: 18px;
+    padding: 1.3rem 1rem;
+    text-align: center;
+    border: 1px solid #e8eeff;
+    box-shadow: 0 16px 35px rgba(13, 31, 67, 0.08);
+}
+
+.statIcon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+.trophy { background: #fff2d8; }
+.paper { background: #f0eafe; }
+.book { background: #dfeeff; }
+.users { background: #eafaf1; }
+
+.statValue {
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: #1d4ed8;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.statLabel {
+    margin-top: 0.55rem;
+    color: #465e8a;
+    font-size: 1rem;
+}
+
+.teacher {
+    background: #edf3ff;
+    padding: 4rem 5% 3rem;
+}
+
+.teacherHeader {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.teacherContent {
+    background: white;
+    border: 1px solid #e1eaff;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 20px 38px rgba(16, 31, 62, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.teacherContent img {
+    width: min(100%, 260px);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #e7efff;
+    background: #f3f7ff;
+}
+
+.teacherContent h3 {
+    margin: 1rem 0 0.8rem;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    line-height: 1.6;
+    color: #12213d;
+    font-weight: 800;
+}
+
+.teacherContent h3 span {
+    display: block;
+    color: #1d4ed8;
+}
+
+.teacherContent .desc {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #edf4ff;
+    border: 1px solid #d9e9ff;
+    border-radius: 999px;
+    color: #2247aa;
+    padding: 0.75rem 1.2rem;
+    font-weight: 700;
+}
+
+.teacherStats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.2rem;
+}
+
+.teacherStats span {
+    display: block;
+    background: #f7faff;
+    border: 1px solid #e5edff;
+    border-radius: 16px;
+    padding: 0.9rem 0.7rem;
+    color: #374a6f;
+    font-weight: 700;
+}
+
+.blue {
+    color: #1d4ed8;
+    font-weight: 800;
+}
+
+.teacherDesc {
+    background: white;
+    border: 1px solid #e1eaff;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 14px 30px rgba(15, 31, 58, 0.05);
+}
+
+.teacherDesc > .blue {
+    display: block;
+    color: #1d4ed8;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.teacherDesc h3 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.5;
+    color: #11213d;
+    font-weight: 800;
+}
+
+.teacherDesc h3 .blue {
+    color: #1d4ed8;
+}
+
+.teacherDesc p {
+    margin: 0;
+    color: #4b5870;
+    line-height: 2;
+    font-size: 1.05rem;
+}
+
+.teacherDesc ul {
+    list-style: none;
+    margin: 1.3rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.9rem;
+    background: #f4f8ff;
+    border: 1px solid #e2ebff;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    color: #1d2b45;
+    font-weight: 600;
+}
+
+.feature i {
+    color: #1d4ed8;
+}
+
+.quote {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #2d6ae8, #4a8dff);
+    color: white;
+    padding: 0.9rem 1.2rem;
+    border-radius: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 22px rgba(45, 106, 232, 0.22);
+}
+
+.teacherNumbers {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.numberStats {
+    background: white;
+    border: 1px solid #e2ecff;
+    border-radius: 18px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 12px 24px rgba(15, 31, 58, 0.04);
+}
+
+.numberStats i {
+    font-size: 1.5rem;
+    color: #1d4ed8;
+    display: block;
+    margin-bottom: 0.65rem;
+}
+
+.numberStats .blue {
+    display: block;
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    margin-bottom: 0.25rem;
+}
+
+.numberStats span:last-child {
+    color: #4a5f84;
+    font-weight: 600;
+}
+
+.needs {
+    background: #ffffff;
+    padding: 4.5rem 5%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; 
+}
+
+.need {
+    background: #f8fbff;
+    border: 1px solid #e5eeff;
+    border-radius: 22px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.need:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(16, 31, 62, 0.08);
+}
+
+.icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #ecf4ff, #dfeeff);
+    font-size: 2.2rem;
+}
+
+.need h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1.6rem;
+    color: #13264b;
+}
+
+.need p {
+    margin: 0;
+    color: #536884;
+    line-height: 1.8;
+}
+
+.social {
+    padding: 4rem 5% 5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #071d46 0%, #0d356d 42%, #123d7d 100%);
+
+}
+
+.social h2 {
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.social p {
+    margin: 1rem auto 2rem;
+    max-width: 700px;
+    color: #cbd6f0;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+.social div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.social .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1.05rem;
+}
+.footer {
+    background: #061d38;
+    color: #deebff;
+    text-align: center;
+    padding: 1rem 5%;
+}
+.parentsLogin{
+    color : #ffffff;
+    font-weight: 700; 
+    border : 1px solid #ffffff;
+    /* border-radius */
+}
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+.footerText{
+    font-weight: 600;
+    color : #ffffff;
+    margin-bottom : 1rem;
+}
+
+@media (max-width: 980px) {
+    .heroContainer {
+        grid-template-columns: 1fr;
+    }
+    .heroLeft {
+        order: 2;
+    }
+
+    .heroRight {
+        order: 1;
+    }
+
+    .heroBadge {
+        position: static;
+        display: inline-flex;
+        gap: 0.5rem;
+    }
+
+    .badge1,
+    .badge2,
+    .badge3 {
+        position: static;
+    }
+
+    .teacherHeader {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid,
+    .needs {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+    .teacherNumbers {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .signUp{
+        display: none; 
+    }
+    .btns {
+        gap: 0.5rem;
+    }
+
+    .startLearing,
+    .startLearning,
+    .ghostBtn {
+        padding: 0.8rem 1rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .heroContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+
+    .heroTag {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .heroButtons .btn {
+        width: 100%;
+        padding: 0.8rem 1rem;
+    }
+
+    .heroStats {
+        gap: 1rem;
+    }
+
+    .statsGrid,
+    .teacherNumbers,
+    .needs {
+        grid-template-columns: 1fr;
+    }
+
+    .teacherStats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Test Page & Sidebar Styles */
+
+.testPage {
+    display: flex;
+    gap: 0;
+    min-height: 100vh;
+    background: #f0f4ff;
+}
+
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e5e9f2;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebarTop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-bottom: 1px solid #f0f4ff;
+    padding-bottom: 1rem;
+}
+
+.sidebarTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f1f3e;
+}
+
+.sidebarSubtitle {
+    font-size: 0.8rem;
+    color: #536884;
+}
+
+.sidebarBtn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #eef4ff;
+    border: 1px solid #dce9ff;
+    color: #1f5fa9;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.sidebarBtn:hover {
+    background: #e3edff;
+}
+
+.sidebarNav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    color: #536884;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.navItem:hover,
+.navItem.active {
+    background: #eef4ff;
+    color: #1d4ed8;
+}
+
+.navIcon {
+    font-size: 1.2rem;
+}
+
+.navLabel {
+    font-size: 0.95rem;
+}
+
+.sidebarBottom {
+    border-top: 1px solid #f0f4ff;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.userName {
+    font-weight: 700;
+    color: #0f1f3e;
+    font-size: 0.95rem;
+}
+
+.userRole {
+    font-size: 0.8rem;
+    color: #536884;
+}
+
+.toggleBtn {
+    width: 50px;
+    height: 28px;
+    border: 1px solid #dce9ff;
+    border-radius: 999px;
+    background: #eef4ff;
+    cursor: pointer;
+    position: relative;
+    padding: 3px;
+}
+
+.toggleSwitch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: 3px;
+    transition: all 0.3s ease;
+}
+
+.langLabel {
+    font-size: 0.85rem;
+    color: #536884;
+    text-align: center;
+}
+
+.testContent {
+    flex: 1;
+    padding: 2rem 3rem;
+}
+
+.testHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.testHeader h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #0f1f3e;
+    font-weight: 800;
+}
+
+.testNotify {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #2d6af0;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.testNotify:hover {
+    background: #2561e0;
+    box-shadow: 0 8px 16px rgba(45, 106, 240, 0.3);
+}
+
+.notifyBadge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ff4757;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.testIntro {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border: 1px solid #e5e9f2;
+}
+
+.introIcon {
+    font-size: 3rem;
+    color: #2d6af0;
+    margin-bottom: 0.8rem;
+}
+
+.testIntro h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.8rem;
+    color: #0f1f3e;
+    font-weight: 800;
+}
+
+.testIntro p {
+    margin: 0 0 1.2rem;
+    color: #536884;
+    font-size: 1rem;
+}
+
+.introTabs {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.introTab {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #dce9ff;
+    border-radius: 999px;
+    background: transparent;
+    color: #536884;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.introTab.active {
+    background: #2d6af0;
+    color: white;
+    border-color: #2d6af0;
+}
+
+.testsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.testCard {
+    background: white;
+    border-radius: 18px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    border-left: 5px solid #2d6af0;
+    border: 1px solid #e5e9f2;
+    border-left: 5px solid #2d6af0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(15, 31, 62, 0.04);
+}
+
+.testCard:hover {
+    box-shadow: 0 12px 32px rgba(15, 31, 62, 0.12);
+}
+
+.testCard-red {
+    border-left-color: #ff4757;
+}
+
+.testCard-purple {
+    border-left-color: #9b59b6;
+}
+
+.testCardLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.testStartBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background: #2d6af0;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.testStartBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(45, 106, 240, 0.3);
+}
+
+.btn-red {
+    background: #ff4757;
+}
+
+.btn-red:hover {
+    box-shadow: 0 8px 16px rgba(255, 71, 87, 0.3);
+}
+
+.btn-purple {
+    background: #9b59b6;
+}
+
+.btn-purple:hover {
+    box-shadow: 0 8px 16px rgba(155, 89, 182, 0.3);
+}
+
+.testCategory {
+    display: inline-block;
+    background: #f0f4ff;
+    color: #536884;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.testCardMiddle {
+    display: flex;
+    justify-content: center;
+}
+
+.testInfo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.testDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.testDetail i {
+    color: #2d6af0;
+    font-size: 1.1rem;
+}
+
+.testDetail {
+    font-size: 0.85rem;
+    color: #536884;
+}
+
+.testCardRight {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+}
+
+.testCardRight h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #0f1f3e;
+    font-weight: 800;
+}
+.testIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #f0f4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #2d6af0;
+}
+.studentForm , .studentLogin , .adminLogin{
+    display : flex;
+    padding : .5rem 1rem; 
+    flex-direction : column;
+    align-items: center;
+    justify-content: center;
+    gap : 1rem;
+    width : 95%; 
+    max-width: 27rem;
+    margin : auto;
+    background-color: #ffffff;
+    border : solid 2px #071d46;
+    border-radius: .5rem;
+}
+
+
+.studentForm label , .studentLogin , .adminLogin{
+    font-size : 1.2rem ;
+    font-weight : 600;
+    text-align: right;
+}
+
+.adminLogin input , .studentLogin input, .adminLogin input{
+    border-radius : .3rem;
+    color : #60759a;
+    font-size: 1.1rem;
+    padding : .6rem .7em;
+    width : 100%;
+    max-width: 25rem;
+}
+.adminLogin button,
+.studentLogin button,
+.adminLogin button{
+    width : 90%; 
+    max-width: 25rem;
+    padding : .5rem .6rem ; 
+    color : #ffffff;
+    background: linear-gradient(135deg, #2d6af0, #4f8cff)
+}
+.addStudent , .addTest{
+    width : 20rem;
+    margin-left: .6rem;
+}
+
+.studentLogin .container,
+.adminLogin .container{
+    display : flex; 
+    flex-direction: column;
+    gap : .3rem ; 
+    font-size : 1.2rem ;
+    width : 100%; 
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+    
+}
+.login{
+    display : grid ;
+    grid-template-columns: 8fr  7fr;
+    grid-template-areas: 'image logInForm';
+    margin : 0 ;
+    min-height: 100vh; 
+}
+.studentLogin , .adminLogin{
+    grid-area: logInForm ;
+    width : 100%; 
+}
+
+.logInPhoto{
+    grid-area: image;
+    display : flex; 
+    height: 100%;
+    min-height: 100vh;
+    width : 100%; 
+}
+.container label{
+    width : 100%; 
+    text-align: right;
+}
+@media (max-width: 1024px) {
+    .testCard {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testCardLeft,
+    .testCardRight {
+        width: 100%;
+    }
+
+    .testCardMiddle {
+        justify-content: flex-start;
+    }
+
+    .testCardRight {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .testPage {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid #e5e9f2;
+    }
+
+    .sidebarNav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .navItem {
+        flex: 1;
+        min-width: 100px;
+        padding: 0.6rem;
+        gap: 0.3rem;
+    }
+
+    .testContent {
+        padding: 1.5rem 1rem;
+    }
+
+    .testCard {
+        grid-template-columns: 1fr;
+    }
+
+    .testInfo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.adminPage {
+    min-height: 100vh;
+    padding: 1.5rem 3%;
+    background: #edf3ff;
+}
+
+.adminHero,
+.studentWelcome {
+    padding: 2rem 3rem;
+    border-radius: 22px;
+    color: white;
+    background: linear-gradient(110deg, #111d42, #24499b 70%, #316fe0);
+    box-shadow: 0 18px 40px rgba(35, 73, 157, 0.16);
+}
+
+.adminHero h1,
+.studentWelcome h2 {
+    margin: 0.4rem 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.adminStats,
+.studentStats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.adminStats article,
+.studentStats article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.3rem;
+    text-align: center;
+    background: white;
+    border: 1px solid #e1e8f5;
+    border-radius: 16px;
+}
+
+.adminStats strong,
+.studentStats strong {
+    color: #3478f6;
+    font-size: 1.8rem;
+}
+
+.dashboardCharts,
+.studentCharts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.chartCard,
+.studentChartCard {
+    min-width: 0;
+    padding: 1.4rem;
+    background: white;
+    border: 1px solid #e1e8f5;
+    border-radius: 18px;
+}
+
+.chartCard h2,
+.studentChartCard h2 {
+    margin: 0;
+}
+
+.chartBox,
+.studentChartBox {
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.studentDashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #edf3ff;
+    color: #17284b;
+}
+
+.studentSidebar {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 10;
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    padding: 1.4rem;
+    background: white;
+    border-left: 1px solid #e1e8f5;
+}
+
+.studentBrand,
+.studentProfile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.studentBrand small,
+.studentProfile small {
+    display: block;
+    color: #7585a2;
+}
+
+.brandMark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: white;
+    background: #3478f6;
+    border-radius: 12px;
+    font-size: 1.4rem;
+}
+
+.sidebarLabel {
+    margin-top: 2.5rem;
+    color: #8795af;
+    font-size: 0.85rem;
+}
+
+.studentSidebar nav {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.studentSidebar nav a {
+    padding: 0.9rem 1rem;
+    color: #667694;
+    border-radius: 12px;
+}
+
+.studentSidebar nav a.active,
+.studentSidebar nav a:hover {
+    color: white;
+    background: #3478f6;
+}
+
+.studentProfile {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #e1e8f5;
+}
+
+.studentProfile button {
+    padding: 0;
+    color: #647593;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.studentContent {
+    width: calc(100% - 250px);
+    margin-right: 250px;
+    padding: 1.5rem 2.5%;
+}
+
+.studentTopbar {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.studentWelcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.studentWelcome > strong {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 2rem;
+    color: #ffd84a;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    font-size: 2rem;
+}
+
+.studentWelcome > strong small {
+    color: white;
+    font-size: 0.85rem;
+}
+
+.studentStats {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.recentAttempts {
+    padding: 1.3rem;
+    background: white;
+    border-radius: 18px;
+}
+
+.recentAttempts article {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #edf1f8;
+}
+
+@media (max-width: 900px) {
+    .logInPhoto{
+        display : none; 
+    }
+    .login {
+        grid-template-columns: 1fr;
+        grid-template-areas: "logInForm";
+    }
+    .adminStats,
+    .studentStats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboardCharts,
+    .studentCharts {
+        grid-template-columns: 1fr;
+    }
+
+    .studentSidebar {
+        position: static;
+        width: 100%;
+    }
+
+    .studentDashboard {
+        display: block;
+    }
+
+    .studentContent {
+        width: 100%;
+        margin: 0;
+    }
+}

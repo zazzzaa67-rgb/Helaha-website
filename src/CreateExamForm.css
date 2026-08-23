@@ -1,0 +1,443 @@
+/* =========================================
+   CREATE EXAM
+========================================= */
+
+.createExam {
+    width: min(1100px, calc(100% - 32px));
+    margin: 30px auto 60px;
+
+    direction: rtl;
+    color: #172033;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.createExam>h2 {
+    margin: 0 0 25px;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.createExam>h2::before {
+    content: "📝";
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #3b82f6);
+
+    border-radius: 16px;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.createExam form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 28px;
+
+    border: 1px solid #e8edf5;
+
+    box-shadow:
+        0 15px 45px rgba(20, 40, 80, 0.07);
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.createExam label {
+    margin-top: 8px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.createExam input,
+.createExam select,
+.createExam textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dfe5ee;
+
+    border-radius: 13px;
+
+    background: #f9fafc;
+
+    color: #172033;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.createExam input::placeholder,
+.createExam textarea::placeholder {
+    color: #a0a7b4;
+}
+
+
+.createExam input:focus,
+.createExam select:focus,
+.createExam textarea:focus {
+    background: #ffffff;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 4px rgba(59, 130, 246, 0.10);
+}
+
+
+.createExam input:hover,
+.createExam select:hover,
+.createExam textarea:hover {
+    border-color: #b8c4d6;
+}
+
+
+.createExam textarea {
+    min-height: 110px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   DISABLED SELECT
+========================================= */
+
+.createExam select:disabled {
+    cursor: not-allowed;
+
+    background: #eef1f5;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================
+   EXAM BASIC INFO
+========================================= */
+
+.createExam form>label:nth-of-type(1),
+.createExam form>label:nth-of-type(2),
+.createExam form>label:nth-of-type(3),
+.createExam form>label:nth-of-type(4),
+.createExam form>label:nth-of-type(5),
+.createExam form>label:nth-of-type(6) {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+.createExam fieldset {
+    position: relative;
+
+    margin: 25px 0 5px;
+
+    padding: 25px;
+
+    border: 1px solid #e3e9f2;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #fafcff);
+
+    box-shadow:
+        0 8px 25px rgba(30, 60, 100, 0.05);
+}
+
+
+/* blue line */
+
+.createExam fieldset::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 5px;
+    height: 100%;
+
+    border-radius: 0 22px 22px 0;
+
+    background: linear-gradient(180deg,
+            #2563eb,
+            #60a5fa);
+}
+
+
+/* =========================================
+   QUESTION TITLE
+========================================= */
+
+.createExam legend {
+    padding: 8px 16px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.createExam fieldset>div {
+    margin-top: 8px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #edf1f6;
+}
+
+
+.createExam fieldset>div label {
+    display: block;
+
+    margin-top: 0;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   CORRECT ANSWER
+========================================= */
+
+.createExam fieldset>input:last-child {
+    border-color: #bbf7d0;
+
+    background: #f0fdf4;
+}
+
+.createExam fieldset>input:last-child:focus {
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 4px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.createExam button {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Add question */
+
+.createExam button[type="button"] {
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border: 1px dashed #93c5fd;
+}
+
+
+.createExam button[type="button"]:hover {
+    background: #dbeafe;
+
+    transform: translateY(-2px);
+}
+
+
+/* Create */
+.createExam button[type="submit"] {
+    margin-top: 8px;
+    background: linear-gradient(135deg,
+            #2563eb,
+            #1d4ed8);
+    color: white;
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.22);
+}
+.createExam button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.30);
+}
+.createExam button:active {
+    transform: scale(0.98);
+}
+.createExam button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+/* =========================================
+   STATUS MESSAGE
+========================================= */
+.createExam form>p[role="status"] {
+    margin: 15px 0 0;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+/* =========================================
+   QUESTIONS SPACING
+========================================= */
+.createExam fieldset label+input,
+.createExam fieldset label+textarea,
+.createExam fieldset label+select {
+    margin-bottom: 8px;
+}
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+    .createExam {
+        width: calc(100% - 20px);
+        margin: 20px auto 40px;
+    }
+    .createExam>h2 {
+        font-size: 25px;
+    }
+    .createExam>h2::before {
+        width: 45px;
+        height: 45px;
+        font-size: 21px;
+    }
+    .createExam form {
+        padding: 18px;
+        border-radius: 22px;
+    }
+    .createExam fieldset {
+        padding: 18px;
+        border-radius: 18px;
+    }
+    .createExam fieldset::before {
+        border-radius: 0 18px 18px 0;
+    }
+    .createExam input,
+    .createExam select,
+    .createExam textarea {
+        font-size: 13px;
+        padding: 12px;
+    }
+    .createExam button {
+        width: 100%;
+    }
+}
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+    .createExam {
+        width: calc(100% - 14px);
+    }
+    .createExam form {
+        padding: 13px;
+    }
+    .createExam fieldset {
+        padding: 15px;
+    }
+    .createExam>h2 {
+        font-size: 22px;
+    }
+}

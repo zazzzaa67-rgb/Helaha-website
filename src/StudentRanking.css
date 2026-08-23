@@ -1,0 +1,245 @@
+.student-ranking {
+    direction: rtl;
+    width: 100%;
+    padding: 24px;
+    background: #f7f8fa;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.student-ranking-header {
+    margin-bottom: 22px;
+}
+
+.student-ranking-header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.student-ranking-header p {
+    margin: 7px 0 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Table wrapper */
+
+.student-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
+/* Table */
+
+.student-ranking table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+.student-ranking thead {
+    background: #f8fafc;
+}
+
+.student-ranking th {
+    padding: 16px 14px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.student-ranking td {
+    padding: 15px 14px;
+    text-align: right;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f0f1f3;
+    vertical-align: middle;
+}
+
+.student-ranking tbody tr {
+    transition: background 0.2s ease;
+}
+
+.student-ranking tbody tr:hover {
+    background: #fafafa;
+}
+
+.student-ranking tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Rank */
+
+.student-rank {
+    width: 60px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+/* Student */
+
+.student-name {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.student-name:hover {
+    color: #2563eb;
+}
+
+/* Points */
+
+.student-points {
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+}
+
+/* Percentage */
+
+.student-percentage {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* Stage */
+
+.student-stage {
+    color: #475569;
+    white-space: nowrap;
+}
+
+/* Add points */
+
+.points-controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.points-controls input {
+    width: 85px;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: #111827;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.points-controls input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.points-controls button {
+    height: 38px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+.points-controls button:hover {
+    background: #1d4ed8;
+}
+
+.points-controls button:active {
+    transform: scale(0.97);
+}
+
+/* Payment */
+
+.payment-button {
+    min-width: 90px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.payment-button.paid {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.payment-button.paid:hover {
+    background: #bbf7d0;
+}
+
+.payment-button.unpaid {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.payment-button.unpaid:hover {
+    background: #fecaca;
+}
+
+/* Date */
+
+.payment-date {
+    color: #64748b;
+    white-space: nowrap;
+}
+
+/* Error */
+
+.points-error {
+    margin-top: 15px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    background: #fef2f2;
+    color: #dc2626;
+    font-size: 14px;
+    border: 1px solid #fecaca;
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .student-ranking {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    .student-ranking-header h2 {
+        font-size: 22px;
+    }
+    .student-table-wrapper {
+        border-radius: 12px;
+    }
+    .student-ranking table {
+        min-width: 900px;
+    }
+}

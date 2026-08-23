@@ -1,0 +1,18 @@
+.addForm{
+    background-color: #9dcbf5;
+    width : 95% ;
+    border-radius: .5rem; 
+    max-width : 25rem; 
+    text-align : center; 
+}
+.addStudentForm{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items : center; 
+    
+}
+.addStudentForm .container {
+    display : flex; 
+    flex-direction: column;
+}

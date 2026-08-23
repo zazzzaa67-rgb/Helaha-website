@@ -1,0 +1,508 @@
+.points-page {
+    min-height: 100vh;
+
+    padding: 35px 20px 70px;
+
+    background:
+        radial-gradient(circle at 100% 0%,
+            rgba(37, 99, 235, 0.07),
+            transparent 30%),
+        #f6f8fc;
+
+    color: #172033;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.points-header {
+    max-width: 1050px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.points-header-icon {
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 38px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.points-header>div:last-child>span {
+    font-size: 13px;
+    color: #999;
+}
+
+.points-header h1 {
+    margin: 3px 0;
+
+    font-size: 34px;
+}
+
+.points-header p {
+    margin: 0;
+
+    color: #888;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.points-main-card {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+
+    overflow: hidden;
+
+    background: linear-gradient(135deg,
+            #d6a63c 0%,
+            #f0c75e 45%,
+            #b98216 100%);
+
+    color: white;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 45px rgba(184, 130, 22, 0.22);
+
+    position: relative;
+}
+.points-main-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -150px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    pointer-events: none;
+}
+.points-total,
+.current-level {
+    padding: 35px;
+}
+
+.points-total {
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+.points-total>span {
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.points-total strong {
+    margin-top: 8px;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.points-total small {
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 13px;
+}
+.current-level {
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.current-level strong {
+    margin-top: 8px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.current-level small {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-card {
+    max-width: 1050px;
+    margin: 18px auto 45px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.progress-top div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.progress-top div span {
+    font-size: 12px;
+    color: #999;
+}
+
+.progress-top div strong {
+    font-size: 17px;
+}
+
+.progress-top>strong {
+    font-size: 22px;
+}
+
+.progress-bar {
+    height: 12px;
+
+    background: #eeeeee;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg,
+            #2563eb,
+            #3b82f6);
+}
+
+.progress-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 9px;
+
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.levels-section,
+.earn-section {
+    max-width: 1050px;
+
+    margin: 0 auto 45px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.section-heading>span {
+    font-size: 28px;
+}
+
+.section-heading>div>span {
+    font-size: 12px;
+    color: #999;
+}
+
+.section-heading h2 {
+    margin: 2px 0 0;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   LEVELS
+========================= */
+
+.levels-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.level-card {
+    position: relative;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 2px solid transparent;
+
+    transition: 0.25s;
+}
+
+.level-card.current {
+    border-color: #191919;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.level-icon {
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.level-info strong {
+    font-size: 16px;
+}
+
+.level-info span {
+    font-size: 11px;
+
+    color: #999;
+}
+
+.current-badge {
+    display: inline-block;
+
+    margin-top: 14px;
+
+    padding: 5px 9px;
+
+    background: #191919;
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   EARN POINTS
+========================= */
+
+.earn-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.earn-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.earn-card>span {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background: #f3f3f3;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+}
+
+.earn-card>div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.earn-card strong {
+    font-size: 12px;
+}
+
+.earn-card b {
+    font-size: 15px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.points-loading,
+.points-error {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.points-loading span {
+    font-size: 55px;
+
+    animation: floatStar 1.5s infinite ease-in-out;
+}
+
+@keyframes floatStar {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.points-error {
+    color: #777;
+}
+
+
+/* =========================
+    MOBILE
+========================= */
+
+@media (max-width: 800px) {
+    .points-page {
+        padding: 20px 12px 50px;
+    }
+    .points-header-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
+    }
+    .points-header h1 {
+        font-size: 27px;
+    }
+    .points-main-card {
+        grid-template-columns: 1fr;
+        border-radius: 22px;
+    }
+    .points-total,
+    .current-level {
+        padding: 25px;
+    }
+    .points-total strong {
+        font-size: 45px;
+    }
+    .current-level strong {
+        font-size: 26px;
+    }
+    .levels-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+    .earn-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .levels-list,
+    .earn-grid {
+        grid-template-columns: 1fr;
+    }
+    .progress-card {
+        padding: 18px;
+    }
+    .points-header {
+        gap: 12px;
+    }
+    .points-header p {
+        font-size: 12px;
+    }
+}

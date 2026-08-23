@@ -1,0 +1,455 @@
+.leaderboard-page {
+    min-height: 100vh;
+    padding: 35px 20px 70px;
+    background: #f6f7fb;
+    color: #171717;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.leaderboard-hero {
+    max-width: 1050px;
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 30px;
+
+    background: linear-gradient(135deg,
+            #191919,
+            #2b2b2b);
+
+    color: white;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.hero-trophy {
+    width: 75px;
+    height: 75px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 40px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-label {
+    font-size: 13px;
+    opacity: 0.65;
+}
+
+.leaderboard-hero h1 {
+    margin: 5px 0;
+    font-size: 34px;
+}
+
+.leaderboard-hero p {
+    margin: 0;
+    opacity: 0.65;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.areas-section,
+.students-section {
+    max-width: 1050px;
+    margin: 0 auto 45px;
+}
+
+.section-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.section-title span {
+    font-size: 13px;
+    color: #888;
+}
+
+.section-title h2 {
+    margin: 4px 0 0;
+    font-size: 25px;
+}
+
+.students-count {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 30px;
+}
+
+
+/* =========================
+   AREAS
+========================= */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.area-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+
+    transition: 0.25s;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+}
+
+.area-rank {
+    font-size: 32px;
+}
+
+.area-info {
+    flex: 1;
+}
+
+.area-info h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+}
+
+.area-info span {
+    font-size: 12px;
+    color: #999;
+}
+
+.area-points {
+    text-align: center;
+}
+
+.area-points strong {
+    display: block;
+    font-size: 18px;
+}
+
+.area-points span {
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* =========================
+   PODIUM
+========================= */
+
+.podium {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.1fr 1fr;
+
+    align-items: end;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.podium-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 15px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+.podium-card.first {
+    padding-top: 40px;
+    padding-bottom: 35px;
+
+    transform: translateY(-15px);
+}
+
+.crown {
+    position: absolute;
+
+    top: -28px;
+
+    font-size: 35px;
+}
+
+.podium-medal {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.student-avatar {
+    width: 65px;
+    height: 65px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: #191919;
+    color: white;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.podium-card h3 {
+    margin: 0;
+
+    font-size: 17px;
+}
+
+.student-area {
+    margin: 6px 0 14px;
+
+    font-size: 12px;
+    color: #888;
+}
+
+.podium-card strong {
+    font-size: 24px;
+}
+
+.podium-card small {
+    color: #999;
+    font-size: 11px;
+}
+
+
+/* =========================
+   RANKING LIST
+========================= */
+
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ranking-row {
+    display: grid;
+
+    grid-template-columns:
+        55px 45px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    background: white;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.ranking-row:hover {
+    transform: translateX(-4px);
+}
+
+.rank {
+    font-weight: 800;
+    color: #777;
+    text-align: center;
+}
+
+.mini-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    font-weight: 700;
+}
+
+.row-student {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.row-student strong {
+    font-size: 15px;
+}
+
+.row-student span {
+    font-size: 11px;
+    color: #999;
+}
+
+.row-points {
+    text-align: center;
+}
+
+.row-points strong {
+    display: block;
+    font-size: 17px;
+}
+
+.row-points span {
+    font-size: 10px;
+    color: #999;
+}
+
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.leaderboard-loading,
+.leaderboard-error {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.loading-trophy {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.leaderboard-error span {
+    font-size: 40px;
+}
+
+.leaderboard-error p {
+    color: #777;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .leaderboard-page {
+        padding: 20px 12px 50px;
+    }
+
+    .leaderboard-hero {
+        padding: 22px;
+
+        border-radius: 22px;
+    }
+
+    .hero-trophy {
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
+    }
+
+    .leaderboard-hero h1 {
+        font-size: 25px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .podium {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .podium-card.first {
+        order: -1;
+        transform: none;
+    }
+
+    .podium-card {
+        padding: 22px;
+    }
+
+    .ranking-row {
+        grid-template-columns:
+            38px 40px 1fr auto;
+
+        padding: 12px;
+    }
+
+    .rank {
+        font-size: 12px;
+    }
+
+    .mini-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .row-student strong {
+        font-size: 13px;
+    }
+
+    .row-points strong {
+        font-size: 15px;
+    }
+
+    .section-title h2 {
+        font-size: 21px;
+    }
+}
