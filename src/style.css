@@ -110,6 +110,7 @@ header .container {
     background: #eef4ff;
     color: #1f3f7a;
     border: 1px solid #dce9ff;
+    display : none; 
 }
 
 .signUp {
