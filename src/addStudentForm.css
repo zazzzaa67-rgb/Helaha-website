@@ -1,18 +1,275 @@
-.addForm{
-    background-color: #9dcbf5;
-    width : 95% ;
-    border-radius: .5rem; 
-    max-width : 25rem; 
-    text-align : center; 
+/* =========================
+   ADD STUDENT
+========================= */
+
+.addForm {
+    direction: rtl;
+    width: min(900px, calc(100% - 32px));
+    margin: 40px auto 70px;
+    padding: 35px;
+
+    background: #ffffff;
+    border: 1px solid #e8eef7;
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(24, 72, 130, 0.08);
 }
-.addStudentForm{
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items : center; 
-    
+
+/* =========================
+   HEADER
+========================= */
+
+.addForm>h1 {
+    margin: 0 0 30px;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    color: #152238;
+
+    position: relative;
+    padding-right: 18px;
 }
-.addStudentForm .container {
-    display : flex; 
+
+.addForm>h1::before {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 5px;
+
+    width: 5px;
+    height: 34px;
+
+    background: linear-gradient(180deg,
+            #2563eb,
+            #60a5fa);
+
+    border-radius: 10px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.addStudentForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+/* =========================
+   INPUT CONTAINER
+========================= */
+
+.addStudentForm .container,
+.addStudentForm>div:not(.container) {
+    display: flex;
     flex-direction: column;
+
+    gap: 8px;
+}
+
+.addStudentForm label {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #334155;
+}
+
+/* =========================
+   INPUTS & SELECT
+========================= */
+
+.addStudentForm input,
+.addStudentForm select {
+    width: 100%;
+    box-sizing: border-box;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1.5px solid #dbe4f0;
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.addStudentForm input::placeholder {
+    color: #94a3b8;
+}
+
+.addStudentForm input:hover,
+.addStudentForm select:hover {
+    border-color: #b9c9df;
+}
+
+.addStudentForm input:focus,
+.addStudentForm select:focus {
+    background: #ffffff;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+/* =========================
+   DISABLED SELECT
+========================= */
+
+.addStudentForm select:disabled {
+    cursor: not-allowed;
+
+    background: #eef2f7;
+    color: #94a3b8;
+
+    opacity: 0.8;
+}
+
+/* =========================
+   AREA
+========================= */
+
+.addStudentForm>div:last-of-type {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.addStudentForm button {
+    grid-column: 1 / -1;
+
+    height: 55px;
+
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #1d4ed8);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.addStudentForm button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(37, 99, 235, 0.30);
+}
+
+.addStudentForm button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.addStudentForm button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+.addStudentForm p[role="status"] {
+    grid-column: 1 / -1;
+    margin: 4px 0 0;
+    padding: 13px 16px;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+    .addForm {
+        width: calc(100% - 24px);
+        margin: 20px auto 50px;
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+    .addForm>h1 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+    .addForm>h1::before {
+        height: 29px;
+    }
+    .addStudentForm {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+    .addStudentForm>div:last-of-type {
+        grid-column: auto;
+    }
+    .addStudentForm button {
+        grid-column: auto;
+    }
+    .addStudentForm p[role="status"] {
+        grid-column: auto;
+    }
+}
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 420px) {
+    .addForm {
+        width: calc(100% - 16px);
+        padding: 20px 14px;
+    }
+    .addForm>h1 {
+        font-size: 23px;
+    }
+    .addStudentForm input,
+    .addStudentForm select {
+        height: 49px;
+        font-size: 13px;
+    }
+    .addStudentForm button {
+        height: 52px;
+    }
 }
