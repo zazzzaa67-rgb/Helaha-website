@@ -40,7 +40,7 @@ export default function AddStudentForm({ token }) {
         setMessage('')
         setIsLoading(true)
         try {
-            const response = await fetch('http://localhost:5000/api/admin/students', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/students`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ export default function Exam() {
 	const token = session?.access_token || ''
 
 	useEffect(() => {
-		fetch('http://localhost:5000/api/students/exams', {
+		fetch(`${import.meta.env.VITE_API_URL}/api/students/exams`, {
 			headers: { Authorization: `Bearer ${token}` },
 		})
 			.then((response) => response.json())
@@ -38,7 +38,7 @@ export default function Exam() {
 
 	async function submitExam() {
 		if (result) return
-		const response = await fetch(`http://localhost:5000/api/students/exams/${examId}/submit`, {
+		const response = await fetch(`${import.meta.env.VITE_API_URL}/api/students/exams/${examId}/submit`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
 			body: JSON.stringify({
