@@ -61,7 +61,7 @@ export default function Points() {
             return
         }
 
-        fetch('http://localhost:5000/api/students/dashboard', {
+        fetch(`${import.meta.env.VITE_API_URL}/api/students/dashboard`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
