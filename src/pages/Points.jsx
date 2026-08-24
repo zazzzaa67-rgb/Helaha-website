@@ -255,6 +255,7 @@ export default function Points() {
                                 }`}
                                 key={item.name}
                             >
+                                <NavLink to='student'>Back to home</NavLink>
                                 <div className="level-icon">
                                     {item.icon}
                                 </div>
