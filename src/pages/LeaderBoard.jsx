@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import {NavLink} from 'react-router-dom'
 import '../LeaderBoard.css'
 export default function LeaderBoard() {
     const [studentsRanking, setStudentsRanking] = useState([])
@@ -98,6 +99,7 @@ export default function LeaderBoard() {
 
             {/* Header */}
             <section className="leaderboard-hero">
+                <NavLink to='student'> الرجوع الي الصفحة الرئيسية <i class="fa-solid fa-arrow-right-long"></i></NavLink>
                 <div className="hero-trophy">🏆</div>
                 <div>
                     <span className="hero-label">
