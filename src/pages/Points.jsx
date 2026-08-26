@@ -261,7 +261,7 @@ export default function Points() {
                                 }`}
                                 key={item.name}
                             >
-                                <NavLink to='student'>Back to home</NavLink>
+                                <Link to='student'>Back to home</Link>
                                 <div className="level-icon">
                                     {item.icon}
                                 </div>
