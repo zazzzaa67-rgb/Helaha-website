@@ -17,7 +17,7 @@ export default function Teacher() {
                         <span><span className='blue'>+5000</span><br /> <i className='fa-solid fa-book'></i>دروس</span>
                         <span><span className='blue'>95%</span><br /> <i className='fa-solid fa-percentage'></i> تفوق</span>
                         <span><span className='blue'>4.9</span><br /> <i className='fa-solid fa-star'></i> تقييم المدرس</span>
-                        <span><span className='blue'>+120</span><br /> <i className='fa-solid fa-user'></i> طالب</span>
+                        <span><span className='blue'>+500</span><br /> <i className='fa-solid fa-user'></i> طالب</span>
                     </div>
                 </div>
 

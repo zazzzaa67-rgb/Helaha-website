@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import '../Points.css'
-
 const levels = [
     {
         name: 'Bronze',
@@ -261,7 +260,7 @@ export default function Points() {
                                 }`}
                                 key={item.name}
                             >
-                                <Link to='/student'>Back to home</Link>
+                                <Link className='backHome' to="/student">Back to home</Link>
                                 <div className="level-icon">
                                     {item.icon}
                                 </div>
