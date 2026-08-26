@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../LeaderBoard.css'
 export default function LeaderBoard() {
     const [studentsRanking, setStudentsRanking] = useState([])
@@ -54,7 +54,6 @@ export default function LeaderBoard() {
 
         studentsRanking.forEach((student) => {
             const area = student.area || 'غير محدد'
-
             if (!areas[area]) {
                 areas[area] = {
                     name: area,
@@ -62,7 +61,6 @@ export default function LeaderBoard() {
                     students: 0,
                 }
             }
-
             areas[area].points += Number(student.points) || 0
             areas[area].students += 1
         })
@@ -99,7 +97,10 @@ export default function LeaderBoard() {
 
             {/* Header */}
             <section className="leaderboard-hero">
-                <NavLink to='student'> الرجوع الي الصفحة الرئيسية <i class="fa-solid fa-arrow-right-long"></i></NavLink>
+                <Link className='backHome' to="/student">
+                    الرجوع إلى الصفحة الرئيسية
+                    <i className="fa-solid fa-arrow-right-long"></i>
+                </Link>
                 <div className="hero-trophy">🏆</div>
                 <div>
                     <span className="hero-label">

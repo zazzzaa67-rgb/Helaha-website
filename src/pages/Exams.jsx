@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link , NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../Exams.css'
 export default function Exams() {
 	const [exams, setExams] = useState([])
@@ -20,7 +20,10 @@ export default function Exams() {
 	}, [session?.access_token])
 
 	return <main className="exams-page" dir='rtl'>
-		<NavLink to='student'> الرجوع الي الصفحة الرئيسية <i class="fa-solid fa-arrow-right-long"></i></NavLink>
+		<Link className='backHome' to="/student">
+			الرجوع إلى الصفحة الرئيسية
+			<i className="fa-solid fa-arrow-right-long"></i>
+        </Link>
 		<h1>الامتحانات</h1>
 		{error && <p role='alert'>{error}</p>}
 		{exams.map((exam) => <article key={exam.id}>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../Points.css'
+
 const levels = [
     {
         name: 'Bronze',
@@ -146,7 +147,10 @@ export default function Points() {
         >
             {/* Header */}
             <section className="points-header">
-                <NavLink to='student'> الرجوع الي الصفحة الرئيسية <i class="fa-solid fa-arrow-right-long"></i></NavLink>
+                <Link className='backHome' to="/student">
+                    الرجوع إلى الصفحة الرئيسية
+                    <i className="fa-solid fa-arrow-right-long"></i>
+                </Link>
                 <div className="points-header-icon">
                     ⭐
                 </div>

@@ -674,6 +674,11 @@ header .container {
     color : #ffffff;
     margin-bottom : 1rem;
 }
+.backHome{
+    text-decoration: none;
+    color:#123d7d;
+    font-size:  1.2rem;
+}
 
 @media (max-width: 980px) {
     .heroContainer {
