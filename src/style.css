@@ -68,14 +68,12 @@ header .container {
     border-radius: 14px;
     box-shadow: 0 12px 25px rgba(31, 90, 233, 0.18);
 }
-
 .name {
     display: block;
     font-size: 1.5rem;
     font-weight: 800;
     color: #11203d;
 }
-
 .thin {
     display: block;
     font-size: 1.3rem;
@@ -89,7 +87,6 @@ header .container {
     align-items: center;
     gap: 0.75rem;
 }
-
 .btn {
     border: none;
     border-radius: 12px;
@@ -119,48 +116,65 @@ header .container {
     padding: 0.75rem 1.1rem;
     
 }
-
-.startLearing,
 .startLearning ,
+header .startLearing,
 .addStudent,
 .addTest{
     background: linear-gradient(135deg, #2d6af0, #4f8cff);
     color: white;
     padding: 0.8rem 1.4rem;
 }
+.hero .startLearning {
+    color : #ffffff;
+}
 .hero {
-    background: linear-gradient(90deg, #071d46 0%, #0d356d 42%, #123d7d 100%);
-    color: white;
+    color: #252525;
     padding: 3rem 5% 2rem;
     min-height: 650px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    background-image: url('./assets/images/Heroback.png');
+    background-size: cover;
 
+}
 .heroContainer {
     width : 100%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
+}
+.teacherImage {
+    position: relative;
+    
+    width: 95%;
+    max-width : 31.25rem; 
+    height: 600px;
 }
 
-
-
-
-
-.heroTeacher {
-    width:95% ;
-    max-width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    border: 8px solid rgba(255, 255, 255, 0.15);
-    object-fit: cover;
-    background: rgba(255, 255, 255, 0.05);
+.teacherImage img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
-
+.blueBlob {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg,
+            #60a5fa,
+            #2563eb);
+    border-radius: 55% 45% 65% 35% / 45% 55% 40% 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(0px);
+    box-shadow:
+        0 25px 70px rgba(37, 99, 235, 0.25);
+    z-index: 0;
+}
 .heroBadge {
     position: absolute;
     background: rgba(15, 31, 62, 0.8);
@@ -214,14 +228,15 @@ header .container {
 
 .heroTag {
     display: inline-block;
-    background: rgba(65, 105, 225, 0.2);
     border: 1px solid rgba(100, 150, 255, 0.4);
     border-radius: 999px;
     padding: 0.6rem 1.2rem;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #90bfff;
-    width: fit-content;
+    background-color : #4a8dff;
+    color : #ffffff;
+    width : 20rem; 
+    
 }
 
 .hero h1 {
@@ -233,25 +248,26 @@ header .container {
 }
 
 .hero h1 span {
-    display: block;
     color: #4a9dff;
     margin-bottom: 0.3rem;
+}
+.motiTitle{
+    display : block;
 }
 
 .heroQuote {
     margin: 0;
     font-size: 1.15rem;
     font-weight: 700;
-    color: #90bfff;
+    color: #2561e0;
     font-style: italic;
 }
-
 .heroDesc {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     line-height: 1.7;
-    color: #bfd0f3;
-    max-width: 25rem;
+    color: #252525;
+    max-width: 27rem;
 }
 
 .heroButtons {
@@ -265,23 +281,23 @@ header .container {
     font-size: 1rem;
     border-radius: 12px;
 }
-
+.heroButtons a{
+    background-color: #ffffff;
+    color : #252525;
+    border-color: #252525;
+}
 .ghostBtn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: white;
 }
 
-/* .startLearning {
-    background: linear-gradient(135deg, #2a6be8, #4a8dff);
-    color: white;
-    border: none;
-} */
 
 .heroStats {
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
+    color : #252525;
 }
 
 .heroStat {
@@ -293,12 +309,11 @@ header .container {
 .heroStatValue {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 800;
-    color: #ffffff;
 }
 
 .heroStatLabel {
     font-size: 1.25rem;
-    color: #90bfff;
+    color: #2563eb;
     opacity: 0.9;
 }
 

@@ -9,9 +9,9 @@ export default function Hero() {
                         منصة حلها مع مستر وجدي
                     </span>
                     <h1>
-                        <span>حلها ببساطة وتفوق</span>
+                        <span className='motiTitle'>حلها ببساطة وتفوق</span>
                         <br />
-                        مع مستر وجدي في الرياضيات
+                        مع <span>مستر وجدي</span> في الرياضيات
                     </h1>
                     <p className="heroQuote">
                     مع مستر وجدي الرياضيات لعبتك
@@ -38,7 +38,10 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-                <img src={teacher} alt="مستر وجدي" className="heroTeacher" />
+                <div className='teacherImage' >
+                    <div className="blueBlob"></div>
+                    <img src={teacher} alt="مستر وجدي" className="heroTeacher" />
+                </div>
             </div>
         </section>
     );
