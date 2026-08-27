@@ -7,7 +7,7 @@
     color: #15803d;
     font-weight: 700;
 }
-* {
+* , *::before , *::after {
     box-sizing: border-box;
 }
 
@@ -690,6 +690,7 @@ header .startLearing,
     margin-bottom : 1rem;
 }
 .backHome{
+    display : block; 
     text-decoration: none;
     color:#123d7d;
     font-size:  1.2rem;

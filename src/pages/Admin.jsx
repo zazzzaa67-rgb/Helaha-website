@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState , useMemo, useCallback  } from 'react'
 import StudentRanking from '../components/StudentRanking.jsx'
 import DashboardCharts from '../components/DashboardCharts.jsx'
 import { NavLink } from 'react-router-dom'
@@ -62,8 +62,7 @@ export default function Admin() {
             .catch((requestError) => {
                 setError(requestError.message)
                 if (requestError.message.includes('token') || requestError.message.includes('authentication')) {
-                    localStorage.removeItem('adminToken')
-                    setToken(null)
+                    handleLogout()
                 }
             })
             .finally(() => setIsLoading(false))
@@ -96,18 +95,22 @@ export default function Admin() {
         }
     }
 
-    function handleLogout() {
+    const handleLogout = useCallback( ()=> {
         localStorage.removeItem('adminToken')
         setToken(null)
         setData(null)
-    }
+    } , [])
 
-    const filteredStudents = data?.students?.filter((student) => {
-        const matchesName = student.full_name.toLocaleLowerCase('ar').includes(studentFilters.name.trim().toLocaleLowerCase('ar'))
-        const matchesStage = !studentFilters.stage || student.stage === studentFilters.stage
-        const matchesGrade = !studentFilters.grade || student.grade === studentFilters.grade
-        return matchesName && matchesStage && matchesGrade
-    }) || []
+    const filteredStudents = useMemo(() => {
+    if (!data?.students) return []
+    const searchName = studentFilters.name.trim().toLocaleLowerCase('ar')
+        return data.students.filter((student) => {
+            const matchesName = !searchName || student.full_name?.toLocaleLowerCase('ar').includes(searchName)
+            const matchesStage = !studentFilters.stage || student.stage === studentFilters.stage
+            const matchesGrade = !studentFilters.grade || student.grade === studentFilters.grade
+            return matchesName && matchesStage && matchesGrade
+        })
+    }, [data?.students, studentFilters])
 
     if (!token) {
         return <main className='adminPage login' dir='rtl'>

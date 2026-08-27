@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useRef , useEffect} from 'react'
 import '../addStudentForm.css'
 const gradesByStage = {
     الإعدادية: ['الصف الأول', 'الصف الثاني', 'الصف الثالث'],
@@ -27,6 +27,14 @@ export default function AddStudentForm({ token }) {
     const [student, setStudent] = useState(initialStudent)
     const [message, setMessage] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const abortControllerRef = useRef(null)
+    useEffect(() => {
+        return () => {
+            if (abortControllerRef.current) {
+                abortControllerRef.current.abort()
+            }
+        }
+    }, [])
 
     function updateStudent(field, value) {
         setStudent((current) => ({
@@ -39,6 +47,7 @@ export default function AddStudentForm({ token }) {
         event.preventDefault()
         setMessage('')
         setIsLoading(true)
+        abortControllerRef.current = new AbortController()
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/students`, {
                 method: 'POST',
@@ -47,6 +56,7 @@ export default function AddStudentForm({ token }) {
                     Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify(student),
+                signal: abortControllerRef.current.signal,
             })
             const result = await response.json()
             if (!response.ok) throw new Error(result.message || 'فشل إضافة الطالب')
@@ -54,7 +64,9 @@ export default function AddStudentForm({ token }) {
             setStudent(initialStudent)
             setMessage('تم إضافة الطالب بنجاح')
         } catch (submitError) {
-            setMessage(submitError.message)
+            if (submitError.name !== 'AbortError') {
+                setMessage(submitError.message)
+            }
         } finally {
             setIsLoading(false)
         }
@@ -65,11 +77,11 @@ export default function AddStudentForm({ token }) {
         <form className='addStudentForm' onSubmit={handleSubmit}>
             <div className='container'>
                 <label htmlFor='student-name'>اسم الطالب</label>
-                <input id='student-name' value={student.full_name} onChange={(event) => updateStudent('full_name', event.target.value)} required />
+                <input autoComplete='name' id='student-name' value={student.full_name} onChange={(event) => updateStudent('full_name', event.target.value)} required />
             </div>
             <div className='container'>
                 <label htmlFor='student-password'>كلمة المرور</label>
-                <input id='student-password' type='password' minLength='6' value={student.password} onChange={(event) => updateStudent('password', event.target.value)} required />
+                <input autoCapitalize='password' id='student-password' type='password' minLength='6' value={student.password} onChange={(event) => updateStudent('password', event.target.value)} required />
             </div>
             <div className='container'>
                 <label htmlFor='student-stage'>المرحلة</label>
@@ -88,18 +100,18 @@ export default function AddStudentForm({ token }) {
             </div>
             <div className='container'>
                 <label htmlFor='student-phone'>رقم الطالب</label>
-                <input id='student-phone' value={student.student_phone} onChange={(event) => updateStudent('student_phone', event.target.value)} />
+                <input autoComplete='tel' id='student-phone'type='tel' value={student.student_phone} onChange={(event) => updateStudent('student_phone', event.target.value)} />
             </div>
             <div className='container'>
                 <label htmlFor='parent-phone'>رقم ولي الأمر</label>
-                <input id='parent-phone' value={student.parent_phone} onChange={(event) => updateStudent('parent_phone', event.target.value)} />
+                <input autoComplete='tel' id='parent-phone' type='tel' value={student.parent_phone} onChange={(event) => updateStudent('parent_phone', event.target.value)} />
             </div>
             <div>
                 <label htmlFor='student-area'>المنطقة</label>
-                <input id='student-area' value={student.area} onChange={(event) => updateStudent('area', event.target.value)} />
+                <input type='text' id='student-area' value={student.area} onChange={(event) => updateStudent('area', event.target.value)} />
             </div>
             <button type='submit' disabled={isLoading}>{isLoading ? 'جاري الإضافة...' : 'إضافة الطالب'}</button>
-            {message && <p role='status'>{message}</p>}
+            {message && <p role='status' aria-live='polite'>{message}</p>}
         </form>
     </section>
 }

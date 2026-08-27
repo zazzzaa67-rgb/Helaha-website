@@ -1,16 +1,16 @@
-import {NavLink} from 'react-router-dom'
-import {
-    CartesianGrid,
-    Line,
-    LineChart,
-    ResponsiveContainer,
-    Tooltip,
-    XAxis,
-    YAxis,
-} from 'recharts'
+import {NavLink , Link} from 'react-router-dom'
+import {useMemo , lazy , Suspense} from 'react'
+const PerformanceChart = lazy(() => import('./PerformanceChart'))
 
 export default function StudentDashboard({ data, onLogout }) {
     const { student, stats, performance, recentAttempts } = data
+    const formattedPoints = useMemo(() => {
+        return stats?.earnedPoints ? stats.earnedPoints.toLocaleString('ar-EG') : '0'
+    }, [stats?.earnedPoints])
+    const formattedPaymentDate = useMemo(() => {
+        if (!student?.payment_date) return 'لم يتم تسجيل تاريخ دفع بعد'
+        return `تاريخ الدفع: ${new Date(student.payment_date).toLocaleDateString('ar-EG')}`
+    }, [student?.payment_date])
 
     return <main className='studentDashboard' dir='rtl'>
         <aside className='studentSidebar'>
@@ -42,7 +42,7 @@ export default function StudentDashboard({ data, onLogout }) {
                     <h2>الرياضيات أسهل مع التدريب المستمر</h2>
                     <p>{student.stage} - {student.grade}</p>
                 </div>
-                <strong>{stats.earnedPoints.toLocaleString('en-US')}<small>نقطة إجمالية</small></strong>
+                <strong>{formattedPoints}<small>نقطة إجمالية</small></strong>
             </section>
             <section className='studentStats'>
                 <article><strong>{stats.earnedPoints.toLocaleString('en-US')}</strong><span>النقاط الإجمالية</span></article>
@@ -53,30 +53,22 @@ export default function StudentDashboard({ data, onLogout }) {
             <section className='studentPaymentStatus'>
                 <h2>حالة الاشتراك</h2>
                 <strong>{student.status === 'paid' ? 'مدفوع' : 'غير مدفوع'}</strong>
-                <span>{student.payment_date
-                    ? `تاريخ الدفع: ${new Date(student.payment_date).toLocaleDateString('ar-EG')}`
-                    : 'لم يتم تسجيل تاريخ دفع بعد'}</span>
+                <span>{formattedPaymentDate}</span>
             </section>
             <section className='studentCharts'>
                 <article className='studentChartCard'>
                     <h2>تطور الأداء</h2>
                     <p>نتائجك في آخر الاختبارات</p>
                     <div className='studentChartBox'>
-                        {performance.length ? <ResponsiveContainer width='100%' height='100%'>
-                            <LineChart data={performance}>
-                                <CartesianGrid strokeDasharray='3 3' vertical={false} />
-                                <XAxis dataKey='label' />
-                                <YAxis domain={[0, 100]} />
-                                <Tooltip />
-                                <Line type='monotone' dataKey='percentage' name='الأداء %' stroke='#3478f6' strokeWidth={3} dot={{ r: 5 }} />
-                            </LineChart>
-                        </ResponsiveContainer> : <p>لم تخض أي اختبار بعد</p>}
+                        <Suspense fallback={<p>جاري تحميل الرسم البياني...</p>}>
+                                <PerformanceChart performance={performance} />
+                        </Suspense>
                     </div>
                 </article>
                 <article className='studentChartCard studentTopicsCard'>
                     <h2>ابدأ التعلم</h2>
                     <p>اختبر مستواك وطور نقاطك</p>
-                    <a href='/exams'>اذهب إلى الاختبارات</a>
+                    <Link to='/exams'>اذهب إلى الاختبارات</Link>
                 </article>
             </section>
             <section className='recentAttempts'>
