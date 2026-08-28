@@ -1,4 +1,4 @@
-import teacher from '../assets/images/teacher.png'
+import teacher from '../assets/images/teacher.webp'
 import {NavLink} from 'react-router-dom'
 export default function Hero() {
     return (

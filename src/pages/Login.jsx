@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import logInImage from '../assets/images/logInImage.png'
+import logInImage from '../assets/images/logInImage.webp'
 export default function Login() {
     const navigate = useNavigate()
     const [message, setMessage] = useState('')

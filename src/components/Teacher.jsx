@@ -1,4 +1,4 @@
-import teacher from '../assets/images/teacher.png'
+import teacher from '../assets/images/teacher.webp'
 
 export default function Teacher() {
     return (

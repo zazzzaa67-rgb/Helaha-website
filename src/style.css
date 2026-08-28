@@ -134,7 +134,7 @@ header .startLearing,
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('./assets/images/Heroback.png');
+    background-image: url('./assets/images/Heroback.webp');
     background-size: cover;
 
 }

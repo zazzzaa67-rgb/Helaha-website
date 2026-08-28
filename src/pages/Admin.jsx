@@ -2,7 +2,7 @@ import { useEffect, useState , useMemo, useCallback  } from 'react'
 import StudentRanking from '../components/StudentRanking.jsx'
 import DashboardCharts from '../components/DashboardCharts.jsx'
 import { NavLink } from 'react-router-dom'
-import logInImage from '../assets/images/logInImage.png'
+import logInImage from '../assets/images/logInImage.webp'
 const API_URL = `${import.meta.env.VITE_API_URL}/api/admin`
 export default function Admin() {
     const [token, setToken] = useState(() => localStorage.getItem('adminToken'))
