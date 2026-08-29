@@ -144,12 +144,12 @@ export default function Points() {
             className="points-page"
             dir="rtl"
         >
+            <Link className='backHome' to="/student">
+                الرجوع إلى الصفحة الرئيسية
+                <i className="fa-solid fa-arrow-right-long"></i>
+            </Link>
             {/* Header */}
             <section className="points-header">
-                <Link className='backHome' to="/student">
-                    الرجوع إلى الصفحة الرئيسية
-                    <i className="fa-solid fa-arrow-right-long"></i>
-                </Link>
                 <div className="points-header-icon">
                     ⭐
                 </div>

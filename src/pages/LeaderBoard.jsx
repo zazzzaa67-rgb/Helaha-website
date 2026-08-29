@@ -96,11 +96,11 @@ export default function LeaderBoard() {
         <main className="leaderboard-page" dir="rtl">
 
             {/* Header */}
+            <Link className='backHome' to="/student">
+                الرجوع إلى الصفحة الرئيسية
+                <i className="fa-solid fa-arrow-right-long" aria-hidden='true'></i>
+            </Link>
             <section className="leaderboard-hero">
-                <Link className='backHome' to="/student">
-                    الرجوع إلى الصفحة الرئيسية
-                    <i className="fa-solid fa-arrow-right-long" aria-hidden='true'></i>
-                </Link>
                 <div className="hero-trophy" aria-hidden='true'>🏆</div>
                 <div>
                     <span className="hero-label">
