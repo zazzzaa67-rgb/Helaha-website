@@ -73,8 +73,8 @@ export default function LeaderBoard() {
     if (isLoading) {
         return (
             <main className="leaderboard-page" dir="rtl">
-                <div className="leaderboard-loading">
-                    <div className="loading-trophy">🏆</div>
+                <div className="leaderboard-loading" aria-live='polite'>
+                    <div className="loading-trophy" aria-hidden='true'>🏆</div>
                     <p>جاري تحميل لوحة المتصدرين...</p>
                 </div>
             </main>
@@ -85,7 +85,7 @@ export default function LeaderBoard() {
         return (
             <main className="leaderboard-page" dir="rtl">
                 <div className="leaderboard-error">
-                    <span>⚠️</span>
+                    <span aria-hidden='true'>⚠️</span>
                     <p>{error}</p>
                 </div>
             </main>
@@ -99,9 +99,9 @@ export default function LeaderBoard() {
             <section className="leaderboard-hero">
                 <Link className='backHome' to="/student">
                     الرجوع إلى الصفحة الرئيسية
-                    <i className="fa-solid fa-arrow-right-long"></i>
+                    <i className="fa-solid fa-arrow-right-long" aria-hidden='true'></i>
                 </Link>
-                <div className="hero-trophy">🏆</div>
+                <div className="hero-trophy" aria-hidden='true'>🏆</div>
                 <div>
                     <span className="hero-label">
                         المنافسة مستمرة
@@ -204,9 +204,9 @@ export default function LeaderBoard() {
 
                         {/* المركز الأول */}
                         <div className="podium-card first">
-                            <div className="crown">👑</div>
+                            <div className="crown" aria-hidden='true'>👑</div>
 
-                            <div className="podium-medal">🥇</div>
+                            <div className="podium-medal" aria-hidden='true'>🥇</div>
 
                             <div className="student-avatar">
                                 {studentsRanking[0].full_name?.charAt(0)}

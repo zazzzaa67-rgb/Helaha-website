@@ -30,7 +30,7 @@ export default function Exam() {
 		}
 		const timer = setInterval(() => setSecondsLeft((current) => current - 1), 1000)
 		return () => clearInterval(timer)
-	}, [secondsLeft, result])
+	}, [result])
 
 	function selectAnswer(questionId, answer) {
 		setAnswers((current) => ({ ...current, [questionId]: answer }))
@@ -49,7 +49,7 @@ export default function Exam() {
 		if (response.ok) setResult(data)
 	}
 
-	if (!exam) return <main dir='rtl'><p>جاري تحميل الامتحان...</p></main>
+	if (!exam) return <main dir='rtl' aria-live='polite'><p>جاري تحميل الامتحان...</p></main>
 
 	function questionIsCorrect(questionId) {
 		return result?.questionResults?.find((item) => item.questionId === questionId)?.isCorrect
@@ -78,7 +78,6 @@ return (
 
                 <div>
                     <small>الوقت المتبقي</small>
-
                     <strong>
                         {Math.floor(secondsLeft / 60)}:
                         {String(secondsLeft % 60).padStart(2, '0')}
@@ -274,33 +273,26 @@ return (
         {/* Result */}
         {result && (
             <section className="examResult">
-
-                <div className="resultIcon">
+                <div className="resultIcon" aria-hidden='true'>
                     🏆
                 </div>
-
                 <h2>
                     تم تسليم الامتحان بنجاح!
                 </h2>
-
                 <p>
                     أحسنت! إليك نتيجتك
                 </p>
-
                 <div className="resultScore">
                     <strong>{result.score}</strong>
-
                     <span>
                         / {result.totalPoints}
                     </span>
                 </div>
-
                 <div className="resultPercentage">
                     {Math.round(
                         (result.score / result.totalPoints) * 100
                     )}%
                 </div>
-
             </section>
         )}
 

@@ -21,7 +21,7 @@ export default function Hero() {
                     </p>
                     <div className="heroButtons">
                         <a href='https://wa.me/201270707586' target='_blank' className="ghostBtn btn">تواصل معنا </a>
-                        <NavLink to='student' className="startLearning btn">ابدأ التعلم الآن</NavLink>
+                        <NavLink to='/student' className="startLearning btn">ابدأ التعلم الآن</NavLink>
                     </div>
                     <div className="heroStats">
                         <div className="heroStat">
@@ -40,7 +40,7 @@ export default function Hero() {
                 </div>
                 <div className='teacherImage' >
                     <div className="blueBlob"></div>
-                    <img src={teacher} alt="مستر وجدي" className="heroTeacher" />
+                    <img src={teacher} alt="مستر وجدي" className="heroTeacher" fetchPriority="high"/>
                 </div>
             </div>
         </section>
