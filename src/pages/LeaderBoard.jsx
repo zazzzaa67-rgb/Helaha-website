@@ -27,13 +27,11 @@ export default function LeaderBoard() {
         })
             .then(async (response) => {
                 const result = await response.json()
-
                 if (!response.ok) {
                     throw new Error(
                         result.message || 'فشل تحميل لوحة المتصدرين'
                     )
                 }
-
                 return result
             })
             .then((result) => {

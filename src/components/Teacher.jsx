@@ -1,6 +1,24 @@
+import { useEffect, useRef, useState } from 'react'
 import teacher from '../assets/images/teacher.webp'
+import CountUpNumber from './CountUpNumber'
 
 export default function Teacher() {
+    const teacherNumbersRef = useRef(null)
+    const [shouldAnimateNumbers, setShouldAnimateNumbers] = useState(false)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setShouldAnimateNumbers(true)
+                observer.disconnect()
+            }
+        })
+
+        if (teacherNumbersRef.current) observer.observe(teacherNumbersRef.current)
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <section className='teacher' dir='rtl'>
             <div className='teacherHeader'>
@@ -36,21 +54,20 @@ export default function Teacher() {
                     <span className='quote'>"مش بنحفظ قوانين... بنفهم الرياضيات."</span>
                 </div>
             </div>
-
-            <div className='teacherNumbers'>
+            <div className='teacherNumbers' ref={teacherNumbersRef}>
                 <div className='numberStats'>
                     <i className='fa-solid fa-user'></i>
-                    <span className='blue'>+500 </span>
+                    <CountUpNumber end={500} shouldAnimate={shouldAnimateNumbers} />
                     <span>طالب نشط </span>
                 </div>
                 <div className='numberStats'>
                     <i className='fa-solid fa-book'></i>
-                    <span className='blue'>+1000 </span>
+                    <CountUpNumber end={1000} shouldAnimate={shouldAnimateNumbers} />
                     <span>درس متوفر </span>
                 </div>
                 <div className='numberStats'>
                     <i className='fa-solid fa-file-alt'></i>
-                    <span className='blue'>+500 </span>
+                    <CountUpNumber end={500} shouldAnimate={shouldAnimateNumbers} />
                     <span>اختبار تم حلة </span>
                 </div>
                 <div className='numberStats'>
