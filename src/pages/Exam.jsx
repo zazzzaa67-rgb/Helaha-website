@@ -28,9 +28,11 @@ export default function Exam() {
 			submitExam()
 			return
 		}
-		const timer = setInterval(() => setSecondsLeft((current) => current - 1), 1000)
+		const timer = setInterval(() => {
+			setSecondsLeft((current) => (current === null ? current : current - 1))
+		}, 1000)
 		return () => clearInterval(timer)
-	}, [result])
+	}, [secondsLeft, result])
 
 	function selectAnswer(questionId, answer) {
 		setAnswers((current) => ({ ...current, [questionId]: answer }))
