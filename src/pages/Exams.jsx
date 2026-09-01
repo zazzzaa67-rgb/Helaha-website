@@ -15,7 +15,7 @@ export default function Exams() {
 				if (!response.ok) throw new Error(result.message || 'فشل تحميل الامتحانات')
 				return result
 			})
-			.then((result) => setExams(result.exams))
+			.then((result) => setExams(Array.isArray(result.exams) ? result.exams : []))
 			.catch((requestError) => setError(requestError.message))
 	}, [session?.access_token])
 
@@ -26,10 +26,13 @@ export default function Exams() {
         </Link>
 		<h1>الامتحانات</h1>
 		{error && <p role='alert'>{error}</p>}
+		{!error && exams.length === 0 && (
+			<p role='status'>لا توجد امتحانات متاحة لك حاليًا.</p>
+		)}
 		{exams.map((exam) => <article key={exam.id}>
 			<h2>{exam.title}</h2>
 			<p>{exam.stage} - {exam.grade}</p>
-			<p>{exam.exam_questions.length} أسئلة - {exam.duration_minutes} دقيقة</p>
+			<p>{Array.isArray(exam.exam_questions) ? exam.exam_questions.length : 0} أسئلة - {exam.duration_minutes} دقيقة</p>
 			<Link to={`/exams/${exam.id}`}>ابدأ الامتحان</Link>
 		</article>)}
 	</main>
