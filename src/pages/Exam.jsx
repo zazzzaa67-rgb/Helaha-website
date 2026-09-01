@@ -7,6 +7,7 @@ export default function Exam() {
 	const [answers, setAnswers] = useState({})
 	const [result, setResult] = useState(null)
 	const [secondsLeft, setSecondsLeft] = useState(null)
+	const [isSubmitting, setIsSubmitting] = useState(false)
 	const session = JSON.parse(localStorage.getItem('studentSession') || 'null')
 	const token = session?.access_token || ''
 
@@ -39,16 +40,25 @@ export default function Exam() {
 	}
 
 	async function submitExam() {
-		if (result) return
-		const response = await fetch(`${import.meta.env.VITE_API_URL}/api/students/exams/${examId}/submit`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-			body: JSON.stringify({
-				answers: Object.entries(answers).map(([question_id, answer]) => ({ question_id, answer })),
-			}),
-		})
-		const data = await response.json()
-		if (response.ok) setResult(data)
+		if (result || isSubmitting) return
+		setIsSubmitting(true)
+
+		try {
+			const response = await fetch(`${import.meta.env.VITE_API_URL}/api/students/exams/${examId}/submit`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+				body: JSON.stringify({
+					answers: Object.entries(answers).map(([question_id, answer]) => ({ question_id, answer })),
+				}),
+			})
+			const data = await response.json()
+			if (response.ok) setResult(data)
+			else if (data?.message) {
+				alert(data.message)
+			}
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	if (!exam) return <main dir='rtl' aria-live='polite'><p>جاري تحميل الامتحان...</p></main>
@@ -263,9 +273,11 @@ return (
                     type="button"
                     className="submitExamButton"
                     onClick={submitExam}
+                    disabled={isSubmitting}
+                    aria-busy={isSubmitting}
                 >
-                    تسليم الامتحان
-                    <span>→</span>
+                    {isSubmitting ? 'جاري إرسال الامتحان...' : 'تسليم الامتحان'}
+                    <span>{isSubmitting ? '…' : '→'}</span>
                 </button>
 
             </div>
