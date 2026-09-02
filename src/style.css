@@ -18,11 +18,16 @@ html {
 body {
     margin: 0;
     font-family: "Tajawal", "Segoe UI", sans-serif;
-    background: #edf3ff;
+    background: #252525;
     color: #12213d;
     direction: rtl;
 }
+.stop{
+    color : #ffffff;
+    text-align : center;
+    font-size : 1.5rem;
 
+}
 img {
     max-width: 100%;
     display: block;

@@ -11,6 +11,7 @@ import StudentHome from './pages/StudentHome.jsx'
 import StudentDetails from './pages/StudentDetails.jsx'
 import LeaderBoard from './pages/LeaderBoard.jsx'
 import Points from './pages/Points.jsx'
+import Stop from './pages/Stop.jsx'
 export default function App(){
   return (
     <BrowserRouter>
@@ -23,7 +24,7 @@ export default function App(){
         <Route path='/exams' element={<Exams />} />
         <Route path='/exams/:examId' element={<Exam />} />
         <Route path='/student' element={<StudentHome />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<Stop/>} />
         <Route path="/tests" element={<Test />} />
         <Route path="/login" element={<Login />} />
         <Route path='parentsLogin' element={<Login/>}/>
