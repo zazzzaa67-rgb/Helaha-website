@@ -20,11 +20,11 @@ export default function App(){
         <Route path='/admin/exams' element={<CreateExam/>}/>
         <Route path='/admin/students/new' element={<AddStudent/>}/>
         <Route path='/admin/students/:studentId' element={<StudentDetails/>}/>
-        <Route path='/admin' element={<Admin />} />
+        <Route path='/admin' element={<Stop/>} />
         <Route path='/exams' element={<Exams />} />
         <Route path='/exams/:examId' element={<Exam />} />
         <Route path='/student' element={<StudentHome />} />
-        <Route path="/" element={<Stop/>} />
+        <Route path="/" element={<Stop/>} /> /* <Landing/>*/
         <Route path="/tests" element={<Test />} />
         <Route path="/login" element={<Login />} />
         <Route path='parentsLogin' element={<Login/>}/>
