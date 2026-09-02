@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import StudentDashboard from '../components/StudentDashboard.jsx'
+import {supabase} from '../lib/supabase.js'
 export default function StudentHome() {
     const navigate = useNavigate()
     const [data, setData] = useState(null)
@@ -51,10 +52,8 @@ export default function StudentHome() {
 
         loadDashboard()
     }, [navigate])
-
     async function handleLogout() {
         await supabase.auth.signOut()
-
         localStorage.removeItem('student')
 
         navigate('/login', { replace: true })
