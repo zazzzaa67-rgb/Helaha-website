@@ -24,7 +24,7 @@ export default function App(){
         <Route path='/exams' element={<Exams />} />
         <Route path='/exams/:examId' element={<Exam />} />
         <Route path='/student' element={<StudentHome />} />
-        <Route path="/" element={<Stop/>} /> /* <Landing/>*/
+        <Route path="/" element={<Stop/>} /> 
         <Route path="/tests" element={<Test />} />
         <Route path="/login" element={<Login />} />
         <Route path='parentsLogin' element={<Login/>}/>
