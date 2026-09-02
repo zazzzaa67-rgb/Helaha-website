@@ -28,7 +28,6 @@ export default function StudentDashboard({ data, onLogout }) {
             <div className='studentProfile'>
                 <strong>{student.full_name}</strong>
                 <small>{student.stage} - {student.grade}</small>
-                <button type='button' onClick={onLogout}>تسجيل الخروج</button>
             </div>
         </aside>
         <section className='studentContent'>

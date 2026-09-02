@@ -29,6 +29,7 @@ export default function Exams() {
 		{!error && exams.length === 0 && (
 			<p role='status'>لا توجد امتحانات متاحة لك حاليًا.</p>
 		)}
+		
 		{exams.map((exam) => <article key={exam.id}>
 			<h2>{exam.title}</h2>
 			<p>{exam.stage} - {exam.grade}</p>
